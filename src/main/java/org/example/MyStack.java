@@ -8,6 +8,11 @@ public class MyStack<E> extends ArrayList<E> {
     public void push(E e) {
         add(e);
     }
+    private ArrayList<E> delegate;
+
+    public MyStack(){
+        delegate = this;
+    }
 
     public E pop() {
         if (isEmpty()) throw new EmptyStackException();
