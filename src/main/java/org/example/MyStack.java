@@ -6,19 +6,19 @@ import java.util.EmptyStackException;
 public class MyStack<E> extends ArrayList<E> {
 
     public void push(E e) {
-        add(e);
+
+        delegate.add(e);
     }
     private ArrayList<E> delegate;
 
     public MyStack(){
-        delegate = this;
+        this.delegate = new ArrayList<>();
     }
 
     public E pop() {
         if (isEmpty()) throw new EmptyStackException();
-        E e = get(size() - 1);
-        remove(size() -1 );
+        E e = delegate.get(delegate.size() - 1);
+        delegate.remove(size() - 1);
         return e;
     }
-
 }

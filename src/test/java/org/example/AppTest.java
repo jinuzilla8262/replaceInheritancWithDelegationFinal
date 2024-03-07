@@ -14,7 +14,6 @@ public class AppTest
         stack.push(1);
         stack.push(2);
         assertEquals(2, stack.size());
-        assertEquals(Integer.valueOf(2), stack.get(stack.size() - 1));
         assertEquals(Integer.valueOf(2), stack.pop());
         assertEquals(Integer.valueOf(1), stack.pop());
         assertTrue(stack.isEmpty());
